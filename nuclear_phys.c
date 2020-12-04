@@ -45,7 +45,7 @@ int main()
     
     long double energy = (n_p*m_p + n_n*m_n + n_e*m_e - m*u)*exponent(c,2)/e;
     printf("Binding energy -> %Lf MeV\n", energy/(exponent(10,6)));
-    printf("Binding energy per nucleon -> %LG MeV\n", energy/(exponent(10,6)*(n_p+n_n)));
+    printf("Binding energy per nucleon -> %Lf MeV\n", energy/(exponent(10,6)*(n_p+n_n)));
 }
 
 int abs(signed int n)
