@@ -17,7 +17,7 @@ int main()
     //Charge of electron
     long double e = 1.602176634*exponent(10,-19);
 
-    //amu
+    //Atomic Mass Unit
     long double u = 1.66053886*exponent(10,-27);
 
     //Speed of light
