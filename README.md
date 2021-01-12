@@ -1,4 +1,4 @@
-##Excess mass energy
+# Excess mass energy
 
 Enter number of protons, number of neutrons, number of electrons and atomic mass.
 
