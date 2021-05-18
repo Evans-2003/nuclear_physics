@@ -1,81 +1,44 @@
 #include <stdio.h>
-
-int abs(signed int n);
-long double exponent(int base, signed int pow);
+#include <math.h>
 
 int main()
 {
+    //Charge of electron
+    long double e = 1.602176634*pow(10,-19);
+
+    //amu
+    long double u = 1.6605390666050*pow(10,-27);
+
     //Mass of proton
-    long double m_p = 1.6726219236951*exponent(10,-27);
+    long double m_p = 1.00727646662153;      // in amu
 
     //Mass of neutron
-    long double m_n = 1.6749274980495*exponent(10,-27);
+    long double m_n = 1.0086649158849;   // in amu
 
     //Mass of electron
-    long double m_e = 9.109383701528*exponent(10,-31);
-
-    //Charge of electron
-    long double e = 1.602176634*exponent(10,-19);
-
-    //Atomic Mass Unit
-    long double u = 1.66053886*exponent(10,-27);
+    long double m_e = 5.4857990907016*pow(10, -4);  // in amu
 
     //Speed of light
     long double c = 299792458;
 
     /* n_p -> number of proton, 
        n_n -> number of neutrons,
-       n_e -> number of electrons,
        m_a -> atomic mass number,
        m   -> atomic mass*/
-    int n_p,n_n,n_e;
+    int n_p,n_n;
     double m;
     printf("Enter no. of protons: ");
     scanf("%d",&n_p);
     printf("Enter no. of neutrons: ");
     scanf("%d",&n_n);
-    printf("Enter no. of electrons: ");
-    scanf("%d",&n_e);
     printf("Enter mass(in amu): ");
     scanf("%lf",&m);
     
     int m_a = n_p + n_n;
     
-    printf("\nExcess mass energy -> %Lf MeV\n", (m*u - m_a*u)*exponent(c,2)/(e*exponent(10,6)));
+    printf("\nExcess mass energy -> %Lf MeV\n", (m*u - m_a*u)*pow(c,2)/(e*pow(10,6)));
     
-    long double energy = (n_p*m_p + n_n*m_n + n_e*m_e - m*u)*exponent(c,2)/e;
-    printf("Binding energy -> %Lf MeV\n", energy/(exponent(10,6)));
-    printf("Binding energy per nucleon -> %Lf MeV\n", energy/(exponent(10,6)*(n_p+n_n)));
-}
-
-int abs(signed int n)
-{
-    if (n<0)
-    {
-        return -n;
-    }
-    else
-    {
-        return n;
-    }
-}
-
-long double exponent(int base, signed int pow)
-{
-    long double result = 1;
-    if (pow>0)
-    {
-        for (int i = 0; i<pow; i++)
-        {
-            result = result*base;
-        }
-    }
-    else if (pow<0)
-    {
-        for (int i = 0; i<abs(pow); i++)
-        {   
-            result = result/base;
-        }
-    }
-    return result;
+    long double energy = (n_p*m_p + n_p*m_e + n_n*m_n - m)*u*pow(c,2)/e;
+    printf("Binding energy -> %Lf MeV\n", energy/(pow(10,6)));
+    printf("Binding energy per nucleon -> %Lf MeV\n", energy/(pow(10,6)*(n_p+n_n)));
 }
