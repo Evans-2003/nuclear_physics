@@ -1,5 +1,5 @@
 # Excess mass energy
 
-Enter number of protons, number of neutrons, number of electrons and atomic mass.
+Enter number of protons, mass number and atomic mass of a nuclei.
 
-Gives Excess mass energy, binding energy and binding energy per nucleon.
+The programs prints the mass excess, binding energy and binding energy per nucleon.
