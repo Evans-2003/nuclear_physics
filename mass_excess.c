@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int main()
-{
+int main(){
     //Charge of electron
     long double e = 1.602176634E-19;
 
